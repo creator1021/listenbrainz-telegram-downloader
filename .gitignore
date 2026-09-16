@@ -1,0 +1,10 @@
+.env
+.venv*/
+.checkenv/
+.ruff_cache/
+data/
+downloads/
+__pycache__/
+*.py[cod]
+*.sqlite3*
+*.session*

@@ -1,0 +1,13 @@
+.env
+.git
+.gitignore
+.venv*
+.checkenv
+.ruff_cache
+data
+downloads
+tests
+__pycache__
+*.pyc
+*.sqlite3
+*.session*

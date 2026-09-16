@@ -1,0 +1,22 @@
+services:
+  song-fetcher:
+    image: ${DOCKER_IMAGE:?Set DOCKER_IMAGE in .env}:${IMAGE_TAG:-latest}
+    pull_policy: always
+    env_file:
+      - .env
+    init: true
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    stop_grace_period: 30s
+    volumes:
+      - telegram-data:/data
+      - ./downloads:/downloads
+
+volumes:
+  telegram-data:
